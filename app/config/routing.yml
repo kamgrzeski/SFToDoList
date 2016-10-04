@@ -1,3 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+kamil_g_site:
+    resource: "@KamilGSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
