@@ -1,3 +1,11 @@
 kamil_g_site_homepage:
     path:     /
     defaults: { _controller: KamilGSiteBundle:Default:index }
+
+kamil_g_site_addlist:
+    path:     /add
+    defaults: { _controller: KamilGSiteBundle:Default:add }
+
+kamil_g_site_sucess:
+    path:     /sucess
+    defaults: { _controller: KamilGSiteBundle:Default:sucess }

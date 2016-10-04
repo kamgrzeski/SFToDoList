@@ -1,0 +1,9 @@
+{% extends "KamilGSiteBundle:Default:layout.html.twig" %}
+
+{% block addlist %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary">Register!</button>
+    {{ form_end(form) }}
+{% endblock %}
+
