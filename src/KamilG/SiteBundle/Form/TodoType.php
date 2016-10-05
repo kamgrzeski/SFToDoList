@@ -25,7 +25,17 @@ class TodoType extends AbstractType
             ->add('description', 'textarea', array(
                 'label'  => 'Description',
                 'attr'   =>  array(
-                    'class'   => 'form-control' )));
+                    'class'   => 'form-control' )))
+
+            ->add('created_by', 'date', [
+                'data' => new \DateTime(),
+                'required' => false,
+                'widget' => 'single_text',
+                'label' => 'Select Date',
+                'attr' => array('class' => 'datetime', "data-date-format" => "yy-mm-dd")
+            ]);
+
+
     }
     
     /**

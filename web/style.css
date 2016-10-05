@@ -28,12 +28,12 @@ body {
 .alert-success, .alert-warning, .alert-danger {
 	margin-top: 20px;
 }
-.data {
-	text-align: right;
-}
 .col-md-10 {
   margin-left: -14px;
 }
 textarea.form-control {
 	margin-bottom: 10px;
+}
+.datetime {
+	margin: 0px 10px 10px 10px;
 }
