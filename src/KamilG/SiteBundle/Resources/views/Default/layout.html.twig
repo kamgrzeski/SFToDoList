@@ -17,10 +17,28 @@
 <div class="container panels">
 			<div class="col-md-8 col-md-offset-2">
 	  			<div class="panel panel-primary">
-		     		<div class="panel-heading">Aplikacja Internetowa - ToDoList</div>
+		     		<div class="panel-heading">
+						<nav class="navbar navbar-inverse">
+							<div class="container-fluid">
+								<div class="navbar-header">
+									<a class="navbar-brand" href="{{ path('kamil_g_site_homepage') }}">Todo Application</a>
+								</div>
+								<ul class="nav navbar-nav">
+									<li><a href="{{ path('kamil_g_site_homepage') }}">Show All Todo</a></li>
+									<li><a href="{{ path('kamil_g_site_addlist') }}">Add Todo</a></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</nav></div>
 		      			<div class="panel-body">
-							{% block linklist %}
-							{% endblock %}
+							{% for flash_message in app.session.flashbag.get('notice') %}
+								<div class="alert alert-success">
+									<strong>Success!</strong> {{ flash_message }}
+								</div>
+							{% endfor %}
+
+
 
 							{% block addlist %}
 							{% endblock %}

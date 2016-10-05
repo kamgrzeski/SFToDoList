@@ -6,6 +6,6 @@ kamil_g_site_addlist:
     path:     /add
     defaults: { _controller: KamilGSiteBundle:Default:add }
 
-kamil_g_site_sucess:
-    path:     /sucess
-    defaults: { _controller: KamilGSiteBundle:Default:sucess }
+kamil_g_site_delete:
+    path:     /delete/{id}
+    defaults: { _controller: KamilGSiteBundle:Default:delete }

@@ -25,7 +25,7 @@ class TodoType extends AbstractType
             ->add('description', 'textarea', array(
                 'label'  => 'Description',
                 'attr'   =>  array(
-                    'class'   => 'form-control')));
+                    'class'   => 'form-control' )));
     }
     
     /**

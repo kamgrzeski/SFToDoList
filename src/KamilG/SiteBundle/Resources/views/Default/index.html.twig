@@ -1,14 +1,11 @@
 {% extends "KamilGSiteBundle:Default:layout.html.twig" %}
+
 {% block showlist %}
 {% for lists in lists %}
 <div class='form-group group-width'>
   <textarea class='form-control textarea' rows='3' name='tresc' readonly>{{ lists.description }}</textarea>
   <div class='buttons'><a href='#'>
-    <button type='submit' class='btn btn-warning'>usuń zadanie</button></a></div>
+      <a href="/delete/{{ lists.id}}"><button type='submit' class='btn btn-warning'>usuń zadanie</button></a></div>
     </div>
 {% endfor %}
-{% endblock %}
-
-{% block linklist %}
-  <button type="button" class="btn btn-default"><a href="{{ path('kamil_g_site_addlist') }}">Click Here to add ToDoList<a/></button>
 {% endblock %}

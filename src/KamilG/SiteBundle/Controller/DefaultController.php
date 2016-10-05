@@ -34,17 +34,32 @@ class DefaultController extends Controller
             $save->persist($lists);
             $save->flush();
 
-            return $this->redirectToRoute('kamil_g_site_sucess');
+            $this->addFlash('notice', 'Your todo has been add.');
+            return $this->redirectToRoute('kamil_g_site_homepage');
         }
 
         return $this->render(
             'KamilGSiteBundle:Default:add.html.twig',
             array('form' => $form->createView())
         );
+
     }
 
-    public function sucessAction()
+    public function deleteAction($id)
     {
-        return new Response("Sucess!");
+        $em = $this->getDoctrine()->getEntityManager();
+        $delete = $em->getRepository('KamilGSiteBundle:Todo')->findOneById($id);
+
+        if (!$delete) {
+            return new Response("No todolist found for id ".$id);
+        }
+
+        $em->remove($delete);
+        $em->flush();
+
+        $this->addFlash('notice', 'Your selected todo has been removed');
+
+        return $this->redirectToRoute('kamil_g_site_homepage');
+
     }
 }
