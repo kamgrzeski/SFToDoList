@@ -1,5 +1,5 @@
 <h1>Todolist Application in Symfony 2.8</h1>
-TodoList is simple application write in Symfony 2.8
+Todo List is simple application write in Symfony 2.8. Its my first application in Symfony because i am still learning this cool framework every day. :-)
 
 Demo: coming soon...
 
