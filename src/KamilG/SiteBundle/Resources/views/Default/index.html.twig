@@ -4,8 +4,9 @@
 {% for lists in lists %}
 <div class='form-group group-width'>{{ lists.createdBy|date('Y-m-d') }}
   <textarea class='form-control textarea' rows='3' name='tresc' readonly>{{ lists.description }}</textarea>
-  <div class='buttons'><a href='#'>
-      <a href="/delete/{{ lists.id}}"><button type='submit' class='btn btn-warning'>usuń zadanie</button></a></div>
+    <div class='buttons'>
+        <a href="/edit/{{ lists.id}}"><button type='submit' class='btn btn-danger'>Edit</button></a>
+        <a href="/delete/{{ lists.id}}"><button type='submit' class='btn btn-info'>Delete</button></a></div>
     </div>
 
 {% endfor %}

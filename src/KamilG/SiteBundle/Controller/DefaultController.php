@@ -67,4 +67,9 @@ class DefaultController extends Controller
         return $this->redirectToRoute('kamil_g_site_homepage');
 
     }
+
+    public function editAction()
+    {
+        return $this->render('KamilGSiteBundle:Default:edit.html.twig');
+    }
 }

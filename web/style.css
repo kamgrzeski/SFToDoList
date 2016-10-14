@@ -11,8 +11,7 @@ body {
 }
 .group-width {
 	width: 80%;
-  margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 20px;
 }
 .buttons {
 	margin-top: -10%;
@@ -36,4 +35,12 @@ textarea.form-control {
 }
 .datetime {
 	margin: 0px 10px 10px 10px;
+}
+.btn {
+	margin-bottom: 4px;
+	width: 100px;
+}
+.buttons {
+	margin-top: -15%;
+	margin-left: 104%;
 }
