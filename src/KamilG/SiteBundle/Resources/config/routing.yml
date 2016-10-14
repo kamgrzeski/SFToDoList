@@ -2,6 +2,14 @@ kamil_g_site_homepage:
     path:     /
     defaults: { _controller: KamilGSiteBundle:Default:index }
 
+kamil_g_site_about:
+    path:     /about
+    defaults: { _controller: KamilGSiteBundle:Default:about }
+
+kamil_g_site_contact_index:
+    path:     /contact
+    defaults: { _controller: KamilGSiteBundle:Contact:index }
+
 kamil_g_site_addlist:
     path:     /add
     defaults: { _controller: KamilGSiteBundle:Default:add }

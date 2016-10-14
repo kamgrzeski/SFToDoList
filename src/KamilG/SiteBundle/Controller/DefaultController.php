@@ -22,6 +22,11 @@ class DefaultController extends Controller
         ));
     }
 
+    public function aboutAction()
+    {
+        return $this->render('KamilGSiteBundle:Default:about.html.twig');
+    }
+
     public function addAction(Request $request)
     {
         $lists = new Todo();
