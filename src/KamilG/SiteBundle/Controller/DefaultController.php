@@ -68,8 +68,30 @@ class DefaultController extends Controller
 
     }
 
-    public function editAction()
+    public function editAction($id, Request $request)
     {
-        return $this->render('KamilGSiteBundle:Default:edit.html.twig');
+        $em = $this->getDoctrine()->getEntityManager();
+        $edit = $em->getRepository('KamilGSiteBundle:Todo')->find($id);
+
+        if (!$edit) {
+            return new response("ID $id not found in database.");
+        }
+
+        $form = $this->createForm(TodoType::class, $edit);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $save = $this->getDoctrine()->getManager();
+            $save->flush();
+
+            $this->addFlash('notice', 'Your todo has been edited.');
+            return $this->redirectToRoute('kamil_g_site_homepage');
+        }
+
+        return $this->render(
+            'KamilGSiteBundle:Default:edit.html.twig',
+            array('form' => $form->createView())
+        );
     }
 }
