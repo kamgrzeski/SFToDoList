@@ -44,3 +44,8 @@ textarea.form-control {
 	margin-top: -15%;
 	margin-left: 104%;
 }
+#title {
+	margin-top: -20px;
+    text-align: right;
+	margin-bottom: 5px;
+}
