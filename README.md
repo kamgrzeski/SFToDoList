@@ -7,7 +7,7 @@ Demo: coming soon...
 <b>Function:</b>
 - <font color="green">Add todo ✔</font>
 - Delete Todo from list ✔
-- Change todo 
+- Change todo ✔
 - account registration
 - Send your todo on email
 
@@ -17,6 +17,7 @@ Demo: coming soon...
 <h3>v.0.3:</h3>
 - Add Update Entity
 - Add About, Contact page
+- Add Change todo
 
 <h3>v.0.2:</h3>
 - Add delete entity
