@@ -42,6 +42,13 @@ class Todo
      */
     private $createdBy;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="priority", type="integer")
+     */
+    private $priority;
+
 
     /**
      * Get id
@@ -120,5 +127,28 @@ class Todo
     public function getCreatedBy()
     {
         return $this->createdBy;
+    }
+
+    /**
+     * Set priority
+     *
+     * @param integer $priority
+     * @return Todo
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
+
+        return $this;
+    }
+
+    /**
+     * Get priority
+     *
+     * @return integer
+     */
+    public function getPriority()
+    {
+        return $this->priority;
     }
 }
