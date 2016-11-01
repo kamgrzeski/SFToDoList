@@ -94,10 +94,10 @@ class DefaultController extends Controller
         );
     }
 
-        public function counterAction()
-        {
+    public function counterAction()
+    {
             return new response (
                 count($this->getDoctrine()->getRepository('KamilGSiteBundle:Todo')->findAll())
             );
-        }
+    }
 }
