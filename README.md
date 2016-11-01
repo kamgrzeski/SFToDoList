@@ -14,6 +14,10 @@ Demo: coming soon...
 
 <h2>ChangeLog</h2> 
 
+<h3>v.0.4:</h3>
+- Add Priority
+- Add "Currently task"
+
 <h3>v.0.3:</h3>
 - Add Update Entity
 - Add About, Contact page
