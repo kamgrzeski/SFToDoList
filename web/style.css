@@ -46,9 +46,41 @@ textarea.form-control {
     text-align: right;
 	margin-bottom: 5px;
 }
-
 #priority {
 	margin-top: -26px;
 	text-align: center;
 	margin-bottom: 5px;
+}
+.headers {
+	margin: 0px 0px 10px 0px;
+}
+.currentlytitle {
+	font-size: 32px !important;
+	margin: 10px 0px 0px 0px;
+	padding: 0px 0px 0px 20px;
+	font-family: 'Indie Flower', cursive;
+}
+.currentlytitle span {
+	display: block;
+}
+.smalltitle {
+	font-size: 12px;
+	font-family: Arial;
+	text-align: center;
+}
+.currently {
+	padding: 0px 0px 0px 80px;
+}
+.currently span {
+	display: block;
+	text-align: center;
+	margin: -20px 0px 0px 0px;
+}
+.currentlytext {
+	font-size: 65px !important;
+}
+.currentlysmalltext {
+	padding: 10px 0px 0px 0px;
+	font-size: 15px !important;
+	text-transform: uppercase;
 }

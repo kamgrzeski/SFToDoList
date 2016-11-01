@@ -11,6 +11,8 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
 	<link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 
@@ -20,25 +22,35 @@
 		     		<div class="panel-heading">
 						<nav class="navbar navbar-inverse">
 							<div class="container-fluid">
-								<div class="navbar-header">
-									<a class="navbar-brand" href="{{ path('kamil_g_site_homepage') }}">Todo Application</a>
-								</div>
 								<ul class="nav navbar-nav">
 									<li><a href="{{ path('kamil_g_site_homepage') }}">Show All Todo</a></li>
 									<li><a href="{{ path('kamil_g_site_addlist') }}">Add Todo</a></li>
 									<li><a href="{{ path('kamil_g_site_about') }}">About</a></li>
 									<li><a href="{{ path('kamil_g_site_contact_index') }}">Contact</a></li>
 								</ul>
-							</div>
-						</nav></div>
+						</nav>
+						<div class="headers">
+							<div class="row">
+								<div class="col-sm-8 currentlytitle">
+									<span>ToDoList Application</span>
+									<span class="smalltitle">You never forget anyting to do every day...</span>
+								</div>
+								<div class="col-sm-4 currentlytext currently">
+									<span>
+										{{ render(controller('KamilGSiteBundle:Default:counter'|default(0))) }}
+									</span>
+									<span class="currentlysmalltext">task left</span>
+								</div>
+									</div>
+						</div>
+								</div>
+
 		      			<div class="panel-body">
 							{% for flash_message in app.session.flashbag.get('notice') %}
 								<div class="alert alert-success">
 									<strong>Success!</strong> {{ flash_message }}
 								</div>
 							{% endfor %}
-
-
 
 							{% block addlist %}
 							{% endblock %}

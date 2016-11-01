@@ -16,10 +16,9 @@ class DefaultController extends Controller
             ->getRepository('KamilGSiteBundle:Todo')
             ->findAll();
 
-
-        return $this->render('KamilGSiteBundle:Default:index.html.twig',
-        array('lists' => $list
-        ));
+       return $this->render('KamilGSiteBundle:Default:index.html.twig',
+       array('lists' => $list,
+            ));
     }
 
     public function aboutAction()
@@ -94,4 +93,11 @@ class DefaultController extends Controller
             array('form' => $form->createView())
         );
     }
+
+        public function counterAction()
+        {
+            return new response (
+                count($this->getDoctrine()->getRepository('KamilGSiteBundle:Todo')->findAll())
+            );
+        }
 }
