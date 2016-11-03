@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aplikacja Internetowa - ToDoList</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+</head>
+
+<div class="container panels">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ path('kamil_g_site_homepage') }}">Show All Todo</a></li>
+                            <li><a href="{{ path('kamil_g_site_addlist') }}">Add Todo</a></li>
+                            <li><a href="{{ path('kamil_g_site_about') }}">About</a></li>
+                            <li><a href="{{ path('kamil_g_site_contact_index') }}">Contact</a></li>
+                        </ul>
+                </nav>
+                <div class="headers">
+                    <div class="row">
+                        <div class="col-sm-8 currentlytitle">
+                            <span>ToDoList Application</span>
+                            <span class="smalltitle">You never forget anyting to do every day...</span>
+                        </div>
+                        <div class="col-sm-4 currentlytext currently">
+									<span>
+										{{ render(controller('KamilGSiteBundle:Default:counter'|default(0))) }}
+									</span>
+                            <span class="currentlysmalltext">task left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                {% for flash_message in app.session.flashbag.get('notice') %}
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% block addlist %}
+                {% endblock %}
+
+                {% block showlist %}
+                {% endblock %}
+            </div>
+            <div class="panel-footer">Autor: Kamil Grzechulski 2016</div>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
